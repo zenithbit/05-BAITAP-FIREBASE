@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import com.example.myapplication.activities.BookingActivity;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +39,7 @@ public class MovieListActivity extends AppCompatActivity {
 
     private void loadMovies() {
         FirebaseFirestore.getInstance()
-                .collection("movies")
+                .collection("movie")
                 .addSnapshotListener((snapshots, error) -> {
                     if (error != null) {
                         Log.e("FIRESTORE", "Lỗi: " + error.getMessage());
